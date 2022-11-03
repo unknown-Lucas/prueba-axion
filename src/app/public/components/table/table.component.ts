@@ -13,8 +13,17 @@ import { outputAst } from '@angular/compiler';
 })
 
 export class TableComponent implements OnInit {
-  filterValue : string = '';
   private _tableData: Book[] = [];
+  private _filterValue : string = '';
+
+  @Input('filterValue')
+  set filterValue(value:string){
+    this._filterValue = value
+  }
+
+  get filterValue(){
+    return this._filterValue
+  }
 
 /*data injection of the values of the table received from the parent component*/
 /*Getter and setter is to update data when the _tableData value changes*/

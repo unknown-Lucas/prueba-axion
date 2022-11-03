@@ -2,6 +2,7 @@
     <h1>Library</h1>
     <div class="table-responsive">
         <app-new-book-button (addBook)="addBook($event)"></app-new-book-button>
-        <app-table [bookElements]="library" (editBook)="editBook($event)"></app-table>
+        <app-searcher (onSearch)="handleFilterChange($event)"></app-searcher>
+        <app-table [bookElements]="library" [filterValue]="filterValue" (editBook)="editBook($event)"></app-table>
     </div>
 </div>

@@ -10,6 +10,7 @@ import { Book } from 'src/app/utils/models/book';
 
 export class MainViewComponent implements OnInit {
   library : Book[] = [];
+  filterValue = ''
   
   /*Bookservice => books Methods */
   /*_bottomSheet => to action the bottomSheet*/ 
@@ -25,6 +26,10 @@ export class MainViewComponent implements OnInit {
 
   editBook(book:Book){
     this.library = this.BOOKSERVICE.editBook(book)
+  }
+
+  handleFilterChange(value:string){
+    this.filterValue = value
   }
 
 }
