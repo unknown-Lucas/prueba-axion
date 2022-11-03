@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
-import { Book } from 'src/app/utils/models/book';
+import { Book } from 'src/app/core/models/book';
 
 @Component({
   selector: 'app-new-book-sheet',

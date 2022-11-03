@@ -1,10 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { Book } from 'src/app/utils/models/book';
+import { Book } from 'src/app/core/models/book';
 import { NewBookSheetComponent } from '../new-book-sheet/new-book-sheet.component';
 import { filter } from 'rxjs';
 import { BooksService } from 'src/app/core/services/books.service';
-import { outputAst } from '@angular/compiler';
 
 @Component({
   selector: 'app-table',

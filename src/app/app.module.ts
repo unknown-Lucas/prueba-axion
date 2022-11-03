@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CoreModule } from './core/core.module';
-import { PrivateModule } from './private/private.module';
+import { SharedModule } from './shared/shared.module';
+import { libraryModule } from './modules/library/library.module';
 
 @NgModule({
   declarations: [
@@ -11,9 +11,9 @@ import { PrivateModule } from './private/private.module';
   ],
   imports: [
     BrowserModule,
-    CoreModule,
+    SharedModule,
     BrowserAnimationsModule,
-    PrivateModule
+    libraryModule
   ],
   providers: [],
   bootstrap: [AppComponent],
