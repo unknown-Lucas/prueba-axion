@@ -23,6 +23,6 @@ export class NewBookButtonComponent {
     })
   }
 
-  @Output('bookAdded') 
+  @Output('addBook') 
   newBookEmitter = new EventEmitter<Book>();
 }

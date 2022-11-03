@@ -1,7 +1,7 @@
 <div class="container text-center mt-5">
     <h1>Library</h1>
     <div class="table-responsive">
-        <app-new-book-button (bookAdded)="addBook($event)"></app-new-book-button>
+        <app-new-book-button (addBook)="addBook($event)"></app-new-book-button>
         <app-table [bookElements]="library" (editBook)="editBook($event)"></app-table>
     </div>
 </div>
