@@ -1,0 +1,19 @@
+<div class="alert alert-danger alert-dismissible fade show" *ngIf="error">
+  <button type="button" class="btn-close" data-bs-dismiss="alert" (click)="error = !error"></button>
+  <strong>Error!</strong> You must fill all the fields
+</div>
+<form class="bookForm" [formGroup]="bookForm">
+    <div class="form-group">
+      <label for="bookTitle">Title</label>
+      <input type="text" class="form-control" id="bookTitle" formControlName="title" required="required">
+    </div>
+    <div class="form-group">
+      <label for="bookAuthor">Author</label>
+      <input class="form-control" id="bookAuthor" formControlName="author">
+    </div>
+    <div class="form-group">
+        <label for="bookEditorial">Editorial</label>
+        <input type="text" class="form-control" id="bookEditorial" formControlName="editorial" required="required">
+      </div>  
+    <button type="submit" class="btn btn-primary" id="submitBtn" (click)="submitForm()">Submit</button>
+  </form>

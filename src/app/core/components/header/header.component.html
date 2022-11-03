@@ -1,0 +1,21 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#" class="hoverable">Link 1</a>
+      <a mat-list-item href="#" class="hoverable">Link 2</a>
+      <a mat-list-item href="#" class="hoverable">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>prueba Lucas Coronilla</span>
+    </mat-toolbar>
+</mat-sidenav-container>

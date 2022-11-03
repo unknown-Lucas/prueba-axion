@@ -1,0 +1,20 @@
+
+<app-searcher (onSearch)="filterValue=$event"></app-searcher>
+<table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Editorial</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of tableData | bookPipe : filterValue; let indexOfelement = index;" (click)="editBook(book)">
+        <th>{{indexOfelement}}</th>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.editorial}}</td>
+      </tr>
+    </tbody>
+  </table>

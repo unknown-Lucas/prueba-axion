@@ -1,0 +1,8 @@
+<mat-form-field class="example-form-field mt-4" appearance="fill">
+  <mat-label *ngIf="!value">Searcher..</mat-label>
+  <input [formControl]="search" autocomplete="false" spellcheck="false" matInput type="text" [(ngModel)]="value" />
+  <button class="btn btn-primary-outline" *ngIf="value" matSuffix mat-icon-button aria-label="Clear"
+    (click)="value = ''">
+    <i class="bi bi-x-lg"></i>
+  </button>
+</mat-form-field>
