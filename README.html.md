@@ -19,6 +19,10 @@ docker build -t prueba .
 docker run -d -it -p 80:80 prueba
 ```
 
+```sh
+visit http://localhost:80
+```
+
 ## Run tests
 
 ```sh
