@@ -4,7 +4,7 @@ import { Book } from 'src/app/core/models/book';
 import { Store } from '@ngrx/store';
 import { retrieveBook } from 'src/app/state/actions/book.actions';
 import { Observable } from 'rxjs';
-import { selectBooks } from 'src/app/state/selectors/books.selector';
+import { selectBooks } from 'src/app/state/selectors/book.selector';
 
 @Component({
   selector: 'app-main-view',

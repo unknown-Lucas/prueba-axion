@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Book } from 'src/app/core/models/book';
 import { LIBRARY } from 'src/app/core/library/biblioteca';
 import { Store } from '@ngrx/store';
-import { selectBooks } from 'src/app/state/selectors/books.selector';
+import { selectBooks } from 'src/app/state/selectors/book.selector';
 
 @Injectable({
   providedIn: 'root'

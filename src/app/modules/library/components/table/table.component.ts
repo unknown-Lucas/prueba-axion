@@ -3,9 +3,8 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { Book } from 'src/app/core/models/book';
 import { NewBookSheetComponent } from '../new-book-sheet/new-book-sheet.component';
 import { filter, Observable } from 'rxjs';
-import { BooksService } from 'src/app/core/services/books.service';
 import { Store } from '@ngrx/store';
-import { selectBooks } from 'src/app/state/selectors/books.selector';
+import { selectBooks } from 'src/app/state/selectors/book.selector';
 import { editBook } from 'src/app/state/actions/book.actions';
 import { selectFilter } from 'src/app/state/selectors/filter.selector';
 
