@@ -13,5 +13,5 @@ export const editBook =  createAction(
 
 export const retrieveBook = createAction(
     '[Book Retrieve] Retrieve Books',
-    props<{ bookCollection: Book[]}>()
+    props<{ bookCollection: ReadonlyArray<Book>}>()
 )

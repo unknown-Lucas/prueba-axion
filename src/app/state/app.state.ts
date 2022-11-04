@@ -4,7 +4,7 @@ import { booksReducer } from "./reducers/book.reducer";
 import { filterReducer } from "./reducers/filter.reducer";
 
 export interface LibraryState {
-    books : Book[],
+    books : ReadonlyArray<Book>,
     filter: string
 }
 

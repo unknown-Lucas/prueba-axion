@@ -15,7 +15,7 @@ import { selectFilter } from 'src/app/state/selectors/filter.selector';
 })
 
 export class TableComponent {
-  tableData$: Observable<Book[]> = new Observable();
+  tableData$: Observable<ReadonlyArray<Book>> = new Observable();
   filterValue$: Observable<string> = new Observable();
 
   /*data injection of the values of the table received from the parent component*/
