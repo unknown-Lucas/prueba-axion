@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from 'src/app/core/services/books.service';
 import { Book } from 'src/app/core/models/book';
+import { Store } from '@ngrx/store';
+import { retrieveBook } from 'src/app/state/actions/book.actions';
+import { Observable } from 'rxjs';
+import { selectBooks } from 'src/app/state/selectors/books.selector';
 
 @Component({
   selector: 'app-main-view',
@@ -9,27 +13,16 @@ import { Book } from 'src/app/core/models/book';
 })
 
 export class MainViewComponent implements OnInit {
-  library : Book[] = [];
   filterValue = ''
   
   /*Bookservice => books Methods */
-  /*_bottomSheet => to action the bottomSheet*/ 
-  constructor( private BOOKSERVICE : BooksService, ) { }
+  constructor( private BOOKSERVICE : BooksService, private STORE:Store) { }
 
   ngOnInit(): void {
-    this.library = this.BOOKSERVICE.getBooks();
+    this.loadData();
   }
 
-  addBook(book:Book){
-    this.library = this.BOOKSERVICE.saveBook(book)
+  loadData(){
+    this.STORE.dispatch(retrieveBook({bookCollection:this.BOOKSERVICE.getBooks()}))
   }
-
-  editBook(book:Book){
-    this.library = this.BOOKSERVICE.editBook(book)
-  }
-
-  handleFilterChange(value:string){
-    this.filterValue = value
-  }
-
 }

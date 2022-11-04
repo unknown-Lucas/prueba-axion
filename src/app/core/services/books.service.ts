@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Book } from 'src/app/core/models/book';
-import { LIBRARY } from 'src/app/core/repository/biblioteca';
+import { LIBRARY } from 'src/app/core/library/biblioteca';
+import { Store } from '@ngrx/store';
+import { selectBooks } from 'src/app/state/selectors/books.selector';
 
 @Injectable({
   providedIn: 'root'
@@ -9,30 +11,15 @@ export class BooksService {
 
   repo: Book[] = LIBRARY
 
-  constructor() { }
+  constructor(private STORE:Store) { }
 
   getBooks(): Book[] {
     return [...this.repo.sort((a,b) => a.id - b.id)];
   }
 
-  saveBook(book:Book) : Book[] {
-    book.id = this.idGenerator()
-    this.repo.push(book)
-    return this.getBooks()
-  }
-
-  editBook(book:Book){
-    this.deleteBook(book.id)
-    this.repo.push(book)
-    return this.getBooks()
-  }
-
-  deleteBook(bookID: number){
-    this.repo = LIBRARY.filter((book) => {return book.id != bookID})
-  }
-
   idGenerator(){
-    const IDS = this.repo.map((book:Book) => book.id)
-    return Math.max(...IDS)+1
+    let idArr : number[] = []
+    this.STORE.select(selectBooks).subscribe(res => {idArr = res.map((book:Book) => book.id)})
+    return Math.max(...idArr)+1
   }
 }
