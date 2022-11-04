@@ -11,6 +11,8 @@ import { MatInputModule } from '@angular/material/input';
 import { NewBookButtonComponent } from './components/new-book-button/new-book-button.component';
 import { NewBookSheetComponent } from './components/new-book-sheet/new-book-sheet.component';
 import { BookPipe } from 'src/app/core/pipes/book-pipe.pipe';
+import { StoreModule } from '@ngrx/store';
+import { LIBRARY_REDUCERS } from 'src/app/state/app.state';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { BookPipe } from 'src/app/core/pipes/book-pipe.pipe';
     TableComponent,
     NewBookButtonComponent,
     NewBookSheetComponent,
-    BookPipe
+    BookPipe,
   ],
 
   imports: [
@@ -32,7 +34,7 @@ import { BookPipe } from 'src/app/core/pipes/book-pipe.pipe';
     SharedModule,
     MatIconModule,
     MatBottomSheetModule,
-  
+    StoreModule.forRoot(LIBRARY_REDUCERS)
   ],
   exports:[MainViewComponent]
 })

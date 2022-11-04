@@ -3,12 +3,12 @@ import { Book } from "../core/models/book";
 import { booksReducer } from "./reducers/book.reducer";
 import { filterReducer } from "./reducers/filter.reducer";
 
-export interface AppState {
+export interface LibraryState {
     books : Book[],
     filter: string
 }
 
-export const ROOT_REDUCERS: ActionReducerMap<AppState> = {
+export const LIBRARY_REDUCERS: ActionReducerMap<LibraryState> = {
     books: booksReducer,
     filter: filterReducer
 }
