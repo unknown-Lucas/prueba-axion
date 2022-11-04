@@ -1,6 +1,6 @@
 import { Book } from "../models/book";
 
-export let LIBRARY : Book[] =
+export const LIBRARY : Book[] =
 [{
         id: 0,
         title: "El alquimista",
