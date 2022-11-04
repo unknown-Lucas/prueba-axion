@@ -20,8 +20,8 @@ export class NewBookButtonComponent {
       .afterDismissed()
       .pipe(filter(book => !!book)) /*check the dismissed bottomSheet return something*/
       .subscribe((newBook: Book) => {
-        newBook.id = this.BOOKSERVICE.idGenerator()
-        this.BOOKSERVICE.addBook(newBook)
+        newBook.id = this.BOOKSERVICE.idGenerator();
+        this.BOOKSERVICE.addBook(newBook);
       })
   }
 }

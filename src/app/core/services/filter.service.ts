@@ -10,6 +10,6 @@ export class FilterService {
   constructor(private STORE:Store) { }
 
   handleFilterChange(inputValue:string){
-    this.STORE.dispatch(onSearch({ value: inputValue }))
+    this.STORE.dispatch(onSearch({ value: inputValue }));
   }
 }

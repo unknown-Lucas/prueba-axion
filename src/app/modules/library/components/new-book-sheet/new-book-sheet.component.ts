@@ -11,11 +11,9 @@ import { Book } from 'src/app/core/models/book';
 
 export class NewBookSheetComponent {
 
-  book: Book = { id: 0, title: '', author: '', editorial: '' }
-
-  bookForm: FormGroup
-
-  error = false;
+  book: Book = { id: 0, title: '', author: '', editorial: '' };
+  bookForm: FormGroup;
+  error = false;;
 
   constructor(private bottomsheet: MatBottomSheetRef<NewBookSheetComponent>, @Inject(MAT_BOTTOM_SHEET_DATA) private bookToEdit: Book) {
     if (this.bookToEdit) {
@@ -35,7 +33,7 @@ export class NewBookSheetComponent {
 
   submitForm() {
     if (this.bookForm.status === 'INVALID') {
-      this.error = true
+      this.error = true;
       return;
     }
     this.book = this.bookForm.value as Book;

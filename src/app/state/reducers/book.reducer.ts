@@ -6,7 +6,7 @@ export const initialState: ReadonlyArray<Book> = [];
 
 export const booksReducer = createReducer(
   initialState,
-  on(retrieveBook,(oldState, {bookCollection}) => {
+  on(retrieveBook,(state, {bookCollection}) => {
     return bookCollection
   }),
   on(addBook,(state, { book }) => {
@@ -16,7 +16,6 @@ export const booksReducer = createReducer(
     state = state.filter((element) => {
         return element.id !== book.id
     })
-    console.log(state)
     return [...state,book].sort((a,b) => a.id - b.id)
   }) 
 )
