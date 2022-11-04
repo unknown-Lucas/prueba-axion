@@ -8,11 +8,9 @@ import { Book } from 'src/app/core/models/book';
 
 export class BookPipe implements PipeTransform {
 
-  transform(list: Book[] | null, args: string | null) : Book[] {
-    if(!list) list = []; 
+  transform(list: any, args : any) : Book[] {
     return list.filter((book:Book) => { 
-      if (args) return book.title.toLowerCase().includes(args.toLowerCase());
-      return book.title.toLowerCase().includes('');
+      return book.title.toLowerCase().includes(args.toLowerCase());
     });
   }
 
