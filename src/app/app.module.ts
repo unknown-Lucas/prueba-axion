@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { libraryModule } from './modules/library/library.module';
-import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -19,4 +18,5 @@ import { StoreModule } from '@ngrx/store';
   providers: [],
   bootstrap: [AppComponent],
 })
+
 export class AppModule { }

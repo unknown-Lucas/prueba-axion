@@ -5,7 +5,6 @@ import { NewBookSheetComponent } from '../new-book-sheet/new-book-sheet.componen
 import { filter, Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { selectBooks } from 'src/app/state/selectors/book.selector';
-import { editBook } from 'src/app/state/actions/book.actions';
 import { selectFilter } from 'src/app/state/selectors/filter.selector';
 import { BooksService } from 'src/app/core/services/books.service';
 

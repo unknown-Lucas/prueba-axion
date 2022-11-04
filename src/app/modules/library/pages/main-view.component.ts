@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from 'src/app/core/services/books.service';
-import { Book } from 'src/app/core/models/book';
-import { Store } from '@ngrx/store';
-import { retrieveBook } from 'src/app/state/actions/book.actions';
-import { Observable } from 'rxjs';
-import { selectBooks } from 'src/app/state/selectors/book.selector';
 
 @Component({
   selector: 'app-main-view',
