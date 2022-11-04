@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 import { selectBooks } from 'src/app/state/selectors/book.selector';
 import { editBook } from 'src/app/state/actions/book.actions';
 import { selectFilter } from 'src/app/state/selectors/filter.selector';
+import { BooksService } from 'src/app/core/services/books.service';
 
 @Component({
   selector: 'app-table',
@@ -20,7 +21,7 @@ export class TableComponent {
 
   /*data injection of the values of the table received from the parent component*/
   /*Getter and setter is to update data when the _tableData value changes*/
-  constructor(private _matBottomSheet: MatBottomSheet, private STORE: Store) {
+  constructor(private _matBottomSheet: MatBottomSheet, private BOOKSERVICE: BooksService, private STORE: Store) {
     this.tableData$ = this.STORE.select(selectBooks)
     this.filterValue$ = this.STORE.select(selectFilter)
   }
@@ -31,7 +32,7 @@ export class TableComponent {
     }).afterDismissed()
       .pipe(filter(book => !!book))
       .subscribe(editedBook => {
-        this.STORE.dispatch(editBook({ book: editedBook }))
+        this.BOOKSERVICE.editBook(editedBook)
       })
   }
 }

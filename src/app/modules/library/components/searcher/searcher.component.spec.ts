@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { provideMockStore } from '@ngrx/store/testing';
 
 import { SearcherComponent } from './searcher.component';
 
@@ -8,7 +10,9 @@ describe('SearcherComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearcherComponent ]
+      declarations: [ SearcherComponent ],
+      
+      providers: [provideMockStore({})]
     })
     .compileComponents();
 

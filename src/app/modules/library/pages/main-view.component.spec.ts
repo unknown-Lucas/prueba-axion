@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 
 import { MainViewComponent } from './main-view.component';
 
@@ -8,7 +9,8 @@ describe('MainViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainViewComponent ]
+      declarations: [ MainViewComponent ],
+      providers: [provideMockStore({})],
     })
     .compileComponents();
 

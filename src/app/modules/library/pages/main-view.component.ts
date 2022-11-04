@@ -16,13 +16,14 @@ export class MainViewComponent implements OnInit {
   filterValue = ''
   
   /*Bookservice => books Methods */
-  constructor( private BOOKSERVICE : BooksService, private STORE:Store) { }
+  constructor( private BOOKSERVICE : BooksService) { }
 
   ngOnInit(): void {
     this.loadData();
   }
 
   loadData(){
-    this.STORE.dispatch(retrieveBook({bookCollection:this.BOOKSERVICE.getBooks()}))
+    let data = this.BOOKSERVICE.getBooks()
+    this.BOOKSERVICE.loadBooks(data)
   }
 }

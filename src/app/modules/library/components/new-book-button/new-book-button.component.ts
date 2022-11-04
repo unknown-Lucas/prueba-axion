@@ -13,16 +13,15 @@ import { addBook } from 'src/app/state/actions/book.actions';
   styleUrls: ['./new-book-button.component.scss']
 })
 export class NewBookButtonComponent {
-
-  constructor(private BOOKSERVICE: BooksService, private _bottomSheet: MatBottomSheet, private STORE: Store) { }
+  constructor(private BOOKSERVICE: BooksService, private _bottomSheet: MatBottomSheet) { }
 
   openBookSheet() {
-    const bottomSheetRef = this._bottomSheet.open(NewBookSheetComponent)
-    bottomSheetRef.afterDismissed()
+    this._bottomSheet.open(NewBookSheetComponent)
+      .afterDismissed()
       .pipe(filter(book => !!book)) /*check the dismissed bottomSheet return something*/
       .subscribe((newBook: Book) => {
         newBook.id = this.BOOKSERVICE.idGenerator()
-        this.STORE.dispatch(addBook({ book: newBook }))
+        this.BOOKSERVICE.addBook(newBook)
       })
   }
 }

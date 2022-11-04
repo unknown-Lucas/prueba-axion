@@ -8,7 +8,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let book of (tableData$ | async) | bookPipe : (filterValue$ | async) ; let indexOfelement = index;" (click)="editBook(book)" >
+      <tr id="bookRow" *ngFor="let book of (tableData$ | async) | bookPipe : (filterValue$ | async) ; let indexOfelement = index;" (click)="editBook(book)" >
         <th>{{indexOfelement}}</th>
         <td>{{book.title}}</td>
         <td>{{book.author}}</td>
