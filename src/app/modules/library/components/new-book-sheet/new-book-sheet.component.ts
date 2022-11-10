@@ -24,9 +24,9 @@ export class NewBookSheetComponent {
       })
     } else {
       this.bookForm = new FormGroup({
-        title: new FormControl('', Validators.required),
-        author: new FormControl('', Validators.required),
-        editorial: new FormControl('', Validators.required)
+        title: new FormControl('', [Validators.required,Validators.maxLength(40)]),
+        author: new FormControl('', [Validators.required,Validators.maxLength(40)]),
+        editorial: new FormControl('',[Validators.required,Validators.maxLength(30)])
       })
     }
   }
