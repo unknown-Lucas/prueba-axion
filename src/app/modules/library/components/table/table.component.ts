@@ -17,9 +17,7 @@ import { BooksService } from 'src/app/core/services/books.service';
 export class TableComponent {
   tableData$: Observable<ReadonlyArray<Book>> = new Observable();
   filterValue$: Observable<string> = new Observable();
-
-  /*data injection of the values of the table received from the parent component*/
-  /*Getter and setter is to update data when the _tableData value changes*/
+  
   constructor(private _matBottomSheet: MatBottomSheet, private BOOKSERVICE: BooksService, private STORE: Store) {
     this.tableData$ = this.STORE.select(selectBooks);
     this.filterValue$ = this.STORE.select(selectFilter);
