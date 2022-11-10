@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MainViewComponent } from './pages/main-view.component';
 import { MatIconModule } from '@angular/material/icon';
 import { TableComponent } from './components/table/table.component';
-import { SearcherComponent } from './components/searcher/searcher.component';
+import { SearcherComponent } from '../../shared/searcher/searcher.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -18,7 +18,6 @@ import { LIBRARY_REDUCERS } from 'src/app/state/app.state';
   declarations: [
     MainViewComponent,
     TableComponent,
-    SearcherComponent,
     TableComponent,
     NewBookButtonComponent,
     NewBookSheetComponent,
@@ -27,10 +26,8 @@ import { LIBRARY_REDUCERS } from 'src/app/state/app.state';
 
   imports: [
     CommonModule,
-    FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatInputModule,
     SharedModule,
     MatIconModule,
     MatBottomSheetModule,
