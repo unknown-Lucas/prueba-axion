@@ -18,9 +18,9 @@ export class NewBookSheetComponent {
   constructor(private bottomsheet: MatBottomSheetRef<NewBookSheetComponent>, @Inject(MAT_BOTTOM_SHEET_DATA) private bookToEdit: Book) {
     if (this.bookToEdit) {
       this.bookForm = new FormGroup({
-        title: new FormControl(this.bookToEdit.title, Validators.required),
-        author: new FormControl(this.bookToEdit.author, Validators.required),
-        editorial: new FormControl(this.bookToEdit.editorial, Validators.required)
+        title: new FormControl('', [Validators.required,Validators.maxLength(40)]),
+        author: new FormControl('', [Validators.required,Validators.maxLength(40)]),
+        editorial: new FormControl('',[Validators.required,Validators.maxLength(30)])
       })
     } else {
       this.bookForm = new FormGroup({
