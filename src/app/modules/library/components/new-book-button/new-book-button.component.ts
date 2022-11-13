@@ -7,7 +7,11 @@ import { NewBookSheetComponent } from '../new-book-sheet/new-book-sheet.componen
 
 @Component({
   selector: 'app-new-book-button',
-  templateUrl: './new-book-button.component.html',
+  template: `
+    <button id="newBookButton" type="button" class="btn btn-circle btn-sm" (click)="openBookSheet()">
+      <i class="bi bi-journal-plus"></i>
+    </button>
+    `,
   styleUrls: ['./new-book-button.component.scss']
 })
 export class NewBookButtonComponent {

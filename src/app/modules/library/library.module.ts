@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MainViewComponent } from './pages/main-view.component';
 import { MatIconModule } from '@angular/material/icon';
 import { TableComponent } from './components/table/table.component';
-import { SearcherComponent } from '../../shared/searcher/searcher.component';
+import { SearcherComponent } from '../../shared/components/searcher/searcher.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { SharedModule } from 'src/app/shared/shared.module';
